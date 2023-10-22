@@ -1,5 +1,4 @@
-//int mouseX = 250;
-//int mouseY = 250;
+
 Cat [] mrow = new Cat[10];
 
 void setup() {
@@ -20,21 +19,26 @@ void draw() {
 }
 
 class Cat {
-  int myX, myY, strokeColor;
+  int myX, myY, catColor;
   Cat()
   {
     myX = 250;
     myY = 250;
-    strokeColor = color((int)(Math.random()*255)+1, (int)(Math.random()*255)+1, (int)(Math.random()*255)+1);
+    catColor = color((int)(Math.random()*255)+1, (int)(Math.random()*255)+1, (int)(Math.random()*255)+1);
   }
   void show () {
-    stroke(strokeColor);
-    fill(#EAEAEA);
+    
+    fill(#FFFAFD);
+    //head
     ellipse(myX, myY, 30, 30);
+    //ears
+    stroke(catColor);
     triangle(myX-12, myY-11, myX-6, myY-14, myX-9, myY-21);
     triangle(myX+12, myY-11, myX+6, myY -14, myX+9, myY-21);
+    //mouth
     arc(myX-3, myY+5, 5, 5, 0, PI);
     arc(myX+3, myY+5, 5, 5, 0, PI);
+    //whiskers
     line(myX+12, myY-2, myX+18, myY-5);
     line(myX+12, myY, myX+18, myY);
     line(myX+12, myY+2, myX+18, myY+5);
@@ -48,15 +52,15 @@ class Cat {
   void move () {
 
     if (mouseX > myX) {
-      myX = myX +(int)((Math.random()*3)+6);
+      myX = myX +(int)((Math.random()*3)+4);
     } else {
-      myX = myX +(int)((Math.random()*3)-8);
+      myX = myX +(int)((Math.random()*3)-6);
     }
     if (mouseY > myY){
-      myY = myY +(int)((Math.random()*3)+9);
+      myY = myY +(int)((Math.random()*3)+6);
     }
     else{
-      myY = myY +(int)((Math.random()*3)-10);
+      myY = myY +(int)((Math.random()*3)-7);
     }
 
   }
