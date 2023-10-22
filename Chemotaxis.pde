@@ -11,7 +11,7 @@ void setup() {
 void draw() {
     background (#FFF5F5);
   fill(#FF0000);
-  ellipse(mouseX, mouseY, 10,10);
+  ellipse(mouseX, mouseY, 5,5);
   for (int i = 0; i<mrow.length; i++) {
     mrow[i].move();
     mrow[i].show();
