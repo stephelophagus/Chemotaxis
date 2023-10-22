@@ -1,15 +1,16 @@
-
+//int mouseX = 250;
+//int mouseY = 250;
 Cat [] mrow = new Cat[10];
 
 void setup() {
   size(500, 500);
-  background (#BFC1C1);
-  noLoop();
+  background (#FFF5F5);
   for (int i = 0; i<mrow.length; i++) {
     mrow[i] = new Cat();
   }
 }
 void draw() {
+    background (#FFF5F5);
   fill(#FF0000);
   ellipse(mouseX, mouseY, 10,10);
   for (int i = 0; i<mrow.length; i++) {
@@ -28,7 +29,7 @@ class Cat {
   }
   void show () {
     stroke(strokeColor);
-    fill(#FFF0F0);
+    fill(#EAEAEA);
     ellipse(myX, myY, 30, 30);
     triangle(myX-12, myY-11, myX-6, myY-14, myX-9, myY-21);
     triangle(myX+12, myY-11, myX+6, myY -14, myX+9, myY-21);
@@ -43,23 +44,25 @@ class Cat {
     fill(0);
     ellipse(myX-6, myY-3, 3, 3);
     ellipse(myX+6, myY-3, 3, 3);
-    if (mouseX > myX) {
-      myX = myX + (int)((Math.random()*10)+3);
-    } else {
-      myX = myX + (int)((Math.random()*10)-6);
-    }
-    if (mouseY > myY){
-      myY = myY + (int)((Math.random()*10)+3);
-    }
-    else{
-      myY = myY + (int)((Math.random()*10)-6);
-    }
   }
   void move () {
-    myX += (int)(Math.random()*5)+1;
-    myY +=(int)(Math.random()*5)-1;
+
+    if (mouseX > myX) {
+      myX = myX +(int)((Math.random()*3)+6);
+    } else {
+      myX = myX +(int)((Math.random()*3)-8);
+    }
+    if (mouseY > myY){
+      myY = myY +(int)((Math.random()*3)+9);
+    }
+    else{
+      myY = myY +(int)((Math.random()*3)-10);
+    }
+
   }
+  
 }
+
 
 
 
